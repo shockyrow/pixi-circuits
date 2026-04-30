@@ -1,4 +1,6 @@
+import type { EventType } from "./event-type";
+
 export interface AppEvent<T = unknown> {
-  type: string;
+  type: EventType;
   payload: T;
 }

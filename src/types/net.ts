@@ -1,5 +1,7 @@
+import type { NetId, PinId } from "./id";
+
 export interface Net {
-  id: string;
-  driverPinId: string;
-  receiverPinIds: string[];
+  id: NetId;
+  driverPinId: PinId;
+  receiverPinIds: PinId[];
 }

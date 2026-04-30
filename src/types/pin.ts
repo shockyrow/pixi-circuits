@@ -1,3 +1,5 @@
+import type { PinId } from "./id";
+
 export enum PinDirection {
   Input = "input",
   Output = "output",
@@ -10,7 +12,7 @@ export enum PinSignal {
 }
 
 export interface Pin {
-  id: string;
+  id: PinId;
   label: string;
   direction: PinDirection;
   signal: PinSignal;
