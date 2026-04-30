@@ -1,5 +1,5 @@
 import type { ComponentInstanceId } from "../id";
 
-export interface SelectComponent {
+export interface SelectComponentPayload {
   componentInstanceId: ComponentInstanceId;
 }

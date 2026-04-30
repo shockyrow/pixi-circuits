@@ -1,5 +1,5 @@
 import type { ComponentInstanceId } from "../id";
 
-export interface DeleteComponent {
+export interface DeleteComponentPayload {
   componentInstanceId: ComponentInstanceId;
 }

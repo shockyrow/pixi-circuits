@@ -3,7 +3,7 @@ export type InputEventType =
   | "input:zoomCanvas"
   | "input:placeComponent"
   | "input:selectComponent"
-  | "input:deleteCompnent"
+  | "input:deleteComponent"
   | "input:connectPins";
 
 export type SimulationEventType =
