@@ -1,3 +1,6 @@
+import { PixiRenderer } from "./renderer/pixi-renderer";
+import type { Renderer } from "./renderer/renderer";
+
 export interface App {
   run(): void;
   destroy(): void;
@@ -5,16 +8,18 @@ export interface App {
 
 export class CircuitApp implements App {
   private container: HTMLElement;
+  private renderer: Renderer;
 
   constructor(container: HTMLElement) {
     this.container = container;
+    this.renderer = new PixiRenderer();
   }
 
   run(): void {
-    console.log("Running...");
+    this.renderer.init(this.container);
   }
 
   destroy(): void {
-    console.log("Destroying...");
+    this.renderer.destroy();
   }
 }
