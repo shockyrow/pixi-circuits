@@ -1,8 +1,7 @@
-import { PixiRenderer } from "./renderer/pixi-renderer";
 import type { Renderer } from "./renderer/renderer";
 
 export interface App {
-  run(): void;
+  run(): Promise<void>;
   destroy(): void;
 }
 
@@ -10,13 +9,13 @@ export class CircuitApp implements App {
   private container: HTMLElement;
   private renderer: Renderer;
 
-  constructor(container: HTMLElement) {
+  constructor(container: HTMLElement, renderer: Renderer) {
     this.container = container;
-    this.renderer = new PixiRenderer();
+    this.renderer = renderer;
   }
 
-  run(): void {
-    this.renderer.init(this.container);
+  async run(): Promise<void> {
+    await this.renderer.init(this.container);
   }
 
   destroy(): void {

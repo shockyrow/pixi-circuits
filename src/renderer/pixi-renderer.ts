@@ -1,4 +1,4 @@
-import { Application } from "pixi.js";
+import { Application, Graphics } from "pixi.js";
 import type { Renderer } from "./renderer";
 import type { Board } from "../types/board";
 
@@ -9,8 +9,8 @@ export class PixiRenderer implements Renderer {
     this.app = new Application();
   }
 
-  init(container: HTMLElement): Promise<void> {
-    this.app.init({ resizeTo: container });
+  async init(container: HTMLElement): Promise<void> {
+    await this.app.init({ resizeTo: container });
     container.appendChild(this.app.canvas);
   }
 
